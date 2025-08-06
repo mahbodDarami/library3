@@ -1,0 +1,170 @@
+/* Landing Page */
+body.landing {
+  margin: 0;
+  padding: 0;
+  background-image: url("/images/library.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.top-bar {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+}
+
+.top-bar a {
+  color: #00ccff;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.top-bar a:hover {
+  text-decoration: underline;
+}
+
+.main-text {
+  position: absolute;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+}
+
+.main-text h1 {
+  font-size: 36px;
+  margin: 0;
+}
+
+.main-text p {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+/* Sign-In Page */
+body.signin {
+  background-color: #f0f0f0;
+  background-image: url("/images/library.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.login-box {
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  width: 350px;
+  text-align: center;
+}
+
+.login-box h2 {
+  margin-bottom: 20px;
+}
+
+.login-box input[type="text"],
+.login-box input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-box button {
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.login-box button:hover {
+  background-color: #005fa3;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Home Page */
+body.home {
+  margin: 0;
+  padding: 0;
+  background-image: url("/images/home.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  background-color: #004466;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  padding: 30px;
+}
+
+.book-list {
+  flex: 1;
+}
+
+.user-info {
+  flex: 1;
+  padding-left: 30px;
+}
+
+.book-list label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.signout {
+  color: white;
+  text-decoration: none;
+}
+
+.signout:hover {
+  text-decoration: underline;
+}
