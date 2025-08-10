@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Seneca Library - Home</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body class="home">
+
+  {{> header}}
+
+  <div class="container">
+    <!-- Available Books -->
+    <div class="book-list">
+      <h3>Available Books</h3>
+      <form id="borrowForm" action="/borrow" method="POST">
+        {{#each availableBooks}}
+          <label>
+            <input type="checkbox" class="borrow-checkbox" name="books" value="{{this._id}}">
+            {{this.title}} by {{this.author}}
+          </label><br>
+        {{/each}}
+        <button type="submit" id="borrowBtn" disabled>Borrow</button>
+      </form>
+    </div>
+
+    <!-- User Info + Borrowed -->
+    <div class="user-info">
+      <h3>Signed in as:</h3>
+      <p>{{user}}</p>
+      <h3>Borrowed Books</h3>
+      <form id="returnForm" action="/return" method="POST">
+        {{#each borrowedBooks}}
+          <label>
+            <input type="checkbox" class="return-checkbox" name="books" value="{{this._id}}">
+            {{this.title}} by {{this.author}}
+          </label><br>
+        {{/each}}
+        <button type="submit" id="returnBtn" disabled>Return</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Enable/disable buttons based on selection -->
+  <script>
+    const borrowBtn = document.getElementById("borrowBtn");
+    const borrowCheckboxes = document.querySelectorAll(".borrow-checkbox");
+    borrowCheckboxes.forEach(cb => {
+      cb.addEventListener("change", () => {
+        borrowBtn.disabled = !Array.from(borrowCheckboxes).some(cb => cb.checked);
+      });
+    });
+
+    const returnBtn = document.getElementById("returnBtn");
+    const returnCheckboxes = document.querySelectorAll(".return-checkbox");
+    returnCheckboxes.forEach(cb => {
+      cb.addEventListener("change", () => {
+        returnBtn.disabled = !Array.from(returnCheckboxes).some(cb => cb.checked);
+      });
+    });
+  </script>
+
+</body>
+</html>
